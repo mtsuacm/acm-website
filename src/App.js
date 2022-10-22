@@ -1,16 +1,22 @@
-import logo from "./logo.svg";
 import "./App.css";
 import React from "react";
+import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
+
+import Home from "./pages/Home.tsx";
+import About from "./pages/About.tsx";
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+  },
+  {
+    path: "/about",
+    element: <About />,
+  },
+]);
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Yo momma</p>
-      </header>
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
