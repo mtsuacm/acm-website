@@ -25,6 +25,7 @@ const Home = () => {
       <TextWrapper>
         <h1>Home</h1>
         <p>Welcome to the start of ACM's new website</p>
+        <button onClick={()=>{alert("bye folks!")}}>Click here to say bye</button>
       </TextWrapper>
     </Wrapper>
   );
