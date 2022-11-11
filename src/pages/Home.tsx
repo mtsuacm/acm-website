@@ -2,7 +2,7 @@
 
 import React from "react";
 import styled from "styled-components";
-import NavBar from "../components/navbar.tsx";
+import NavBar from "../components/navbar2.tsx";
 
 const Wrapper = styled.div`
   background: #282c34;
