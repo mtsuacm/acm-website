@@ -24,7 +24,7 @@ const Home = () => {
       <NavBar />
       <TextWrapper>
         <h1>Home</h1>
-        <p>Welcome to the start of ACM's new website</p>
+        <p>Welcome to the start of ACM's new website and Im just adding and now what</p>
       </TextWrapper>
     </Wrapper>
   );
