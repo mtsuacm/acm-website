@@ -24,7 +24,8 @@ const Home = () => {
       <NavBar />
       <TextWrapper>
         <h1>Home</h1>
-        <p>Welcome to the start of ACM's new website</p>
+        <p>Welcome to the start of ACM's new website!!!!</p>
+        <img src = "MTSU_Logo.png" alt=""/>
       </TextWrapper>
     </Wrapper>
   );
