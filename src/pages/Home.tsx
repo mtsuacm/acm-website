@@ -7,7 +7,6 @@ import NavBar from "../components/navbar.tsx";
 const Wrapper = styled.div`
   background: #282c34;
   min-height: 100vh;
-  padding: 10px;
   color: white;
 `;
 
@@ -31,3 +30,16 @@ const Home = () => {
 };
 
 export default Home;
+
+
+
+
+
+
+
+
+// info we need to display:
+// socials (need to create: linkedIn, github, instagram)
+// officers (need to create: president, vice president, secretary, treasurer)
+// Whats new? 
+// short paragraph about ACM

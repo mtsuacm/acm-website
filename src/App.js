@@ -20,3 +20,11 @@ function App() {
 }
 
 export default App;
+
+
+// new links to add
+// events
+// FAQs
+// contact
+// news
+// gallery
