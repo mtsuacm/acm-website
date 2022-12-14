@@ -7,7 +7,6 @@ import NavBar from "../components/navbar.tsx";
 const Wrapper = styled.div`
   background: #282c34;
   min-height: 100vh;
-  padding: 10px;
   color: white;
 `;
 
