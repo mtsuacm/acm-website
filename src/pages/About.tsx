@@ -1,19 +1,30 @@
 import React from "react";
+import styled from "styled-components";
 import NavBar from "../components/navbar.tsx";
+
+const Wrapper = styled.div`
+  background: #282c34;
+  min-height: 100vh;
+  padding: 10px;
+  color: white;
+`;
+
+const TextWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
 const About = () => {
   return (
-    <div>
-      <div className="App">
-        <header className="App-header">
-          <NavBar />
-          <h1>About</h1>
-          <p>
-            This is the about page. It will be updated with more information
-            soon.
-          </p>
-        </header>
-      </div>
-    </div>
+    <Wrapper>
+    <NavBar />
+    <TextWrapper>
+      <h1>About</h1>
+      <p>This is the about page. It will be updated with more information            soon.</p>
+    </TextWrapper>
+  </Wrapper>
   );
 };
 
