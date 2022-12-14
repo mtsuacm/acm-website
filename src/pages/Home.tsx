@@ -30,3 +30,16 @@ const Home = () => {
 };
 
 export default Home;
+
+
+
+
+
+
+
+
+// info we need to display:
+// socials (need to create: linkedIn, github, instagram)
+// officers (need to create: president, vice president, secretary, treasurer)
+// Whats new? 
+// short paragraph about ACM

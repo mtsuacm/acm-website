@@ -28,3 +28,14 @@ const About = () => {
 };
 
 export default About;
+
+// notes:
+// what is ACM?
+// how to join?
+// what do we do?
+// what are our events?
+// what are our socials?
+// who are our officers?
+// what is our mission?
+// what is our vision?
+// what is our purpose?

@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import acmlogo from "../../src/images/acm-logo.jpeg";
-import mtsuLogo from "../../src/images/MT-horiz-logo-web.jpg";
+import mtsuLogo from "../../src/images/MTlogo.png";
 
 
 
@@ -24,7 +24,7 @@ const Wrapper = styled.div`
 
 const LinkItem = styled.p`
   color: black;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   margin: auto 10px;
   align-self: center;
@@ -43,7 +43,7 @@ const NavBar = () => {
     <>
       <Wrapper>
       <LinkItem>
-        <img src={mtsuLogo} alt="MTSU Logo" width="150px" height="70px" />
+        <img src={mtsuLogo} alt="MTSU Logo" width="50px" height="50px" />
       </LinkItem>
         <LinkItem>
         <img src={acmlogo} alt="ACM Logo" style={{ width: "50px", height: "50px" }} />
@@ -56,6 +56,11 @@ const NavBar = () => {
           <LinkItem>
         <Link to="/about" style={linkStyle}>
         About
+        </Link>
+        </LinkItem>
+        <LinkItem>
+        <Link to="/" style={linkStyle}>
+        Events 🚧
         </Link>
         </LinkItem>
       </Wrapper>
