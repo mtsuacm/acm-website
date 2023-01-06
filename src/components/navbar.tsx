@@ -1,71 +1,121 @@
-import React from "react";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
-import acmlogo from "../../src/images/acm-logo.jpeg";
-import mtsuLogo from "../../src/images/MTlogo.png";
+import * as React from 'react';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import Menu from '@mui/material/Menu';
+import MenuIcon from '@mui/icons-material/Menu';
+import Container from '@mui/material/Container';
+import Avatar from '@mui/material/Avatar';
+import Button from '@mui/material/Button';
+import Tooltip from '@mui/material/Tooltip';
+import MenuItem from '@mui/material/MenuItem';
+import AdbIcon from '@mui/icons-material/Adb';
 
 
+import { useNavigate, useLocation } from 'react-router-dom';
+import acmlogo from "../../src/images/acm-logo.png";
+const pages = ['About', 'Events', 'Blog'];
+function ResponsiveAppBar() {
+  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
+  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
+
+  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorElNav(event.currentTarget);
+  };
+  const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorElUser(event.currentTarget);
+  };
+
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
+
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
+  };
 
 
-const Wrapper = styled.div`
-  background: white;
-  color: black;
-  font-size: 24px;
-  display: flex;
-  width: 100vw;
-  justify-content: start;
-`;
-// px = pixels
-// vw = viewport width
-// vh = viewport height
-// rem = relative to font-size of the root element
-// em = relative to the font-size of the element (2em means 2 times the size of the current font)
+  let navigate = useNavigate();
+  let location = useLocation();
 
-
-const LinkItem = styled.p`
-  color: black;
-  font-size: 18px;
-  font-weight: bold;
-  margin: auto 10px;
-  align-self: center;
-  // ignore this hack 😂 'none' wouldn't work
-  text-decoration: underline;
-  text-decoration-color: #fff;
-`;
-
-const linkStyle = {
-    color: "black",
-    textDecoration: "underline",
-    textDecorationColor: "#fff"
-    }
-const NavBar = () => {
   return (
-    <>
-      <Wrapper>
-      <LinkItem>
-        <img src={mtsuLogo} alt="MTSU Logo" width="50px" height="50px" />
-      </LinkItem>
-        <LinkItem>
-        <img src={acmlogo} alt="ACM Logo" style={{ width: "50px", height: "50px" }} />
-        </LinkItem>
-          <LinkItem>
-        <Link to="/" style={linkStyle}>
-            Home
-        </Link>
-          </LinkItem>
-          <LinkItem>
-        <Link to="/about" style={linkStyle}>
-        About
-        </Link>
-        </LinkItem>
-        <LinkItem>
-        <Link to="/" style={linkStyle}>
-        Events 🚧
-        </Link>
-        </LinkItem>
-      </Wrapper>
-    </>
-  );
-};
+    <AppBar position="static">
+      <Container maxWidth="xl">
+        <Toolbar disableGutters>
+          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          <Typography
+            variant="h6"
+            noWrap
+            component="a"
+            href="/"
+            sx={{
+              mr: 2,
+              display: { xs: 'none', md: 'flex' },
+              fontFamily: 'monospace',
+              fontWeight: 700,
+              letterSpacing: '.3rem',
+              color: 'inherit',
+              textDecoration: 'none',
+            }}
+          >
+            LOGO
+          </Typography>
 
-export default NavBar;
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+            <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpenNavMenu}
+              color="inherit"
+            >
+              <MenuIcon />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorElNav}
+              anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'left',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'left',
+              }}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
+              sx={{
+                display: { xs: 'block', md: 'none' },
+              }}
+            >
+             //only show links that arent the current page
+              {pages.map((page) => (
+                <MenuItem key={page} onClick={() => {navigate(`${page}`)}}>
+                  <Typography textAlign="center">{page}</Typography>
+                </MenuItem>
+              ))}
+            </Menu>
+          </Box>
+            <img src={acmlogo} alt="logo" style={{ width: '100px' }} />
+           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+            {pages.map((page) => (
+              <Button
+                key={page}
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: 'white', display: 'block' }}
+              >
+                {page}
+              </Button>
+            ))}
+          </Box>
+
+         </Toolbar>
+      </Container>
+    </AppBar>
+  );
+}
+export default ResponsiveAppBar;
